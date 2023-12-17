@@ -1,3 +1,4 @@
+/* Body */
 body, html {
     width: 100%;
     height: 100%;
@@ -8,20 +9,48 @@ body {
     flex-direction: column;
     margin: 0;
 }
-main {
-    height: 100%;
-    flex: 1 0 auto;
+/* Logo */
+header > a {
+    text-decoration: none;
+    color: black;
 }
-#front-image {
-    width: 100%;
-    height: 100%;
-    background: url(../images/front.jpeg) no-repeat center center/cover;
-}
-h1 {
+#logo {
     font-family: 'Rubik Doodle Shadow', sans-serif;
     font-size: 3.8rem;
     margin-left: 1rem;
 }
+/* Main content */
+main {
+/* Credit: CI Love running project */
+    min-height: 100vh;
+    flex: 1 0 auto;
+}
+.main-image {
+    background: url(../images/front.jpeg) no-repeat center center/cover;
+}
+.quiz-area {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+#home-text {
+    font-family: lato, sans-serif;
+    font-size: 3rem;
+    text-align: center;
+}
+#start-quiz {
+    padding: 1rem 4rem;
+    font-size: 2.6rem;
+    width: fit-content;
+    border-radius: 16px;
+    border: solid 3px black;
+    background-color: #f1ecce;
+}
+#start-quiz:hover {
+    box-shadow: 7px 10px black;
+}
+/* Footer */
 #socials-container {
     list-style-type: none;
     font-size: 2.5rem;
@@ -35,7 +64,7 @@ footer a {
     color: black;
 }
 @media screen and (min-width: 1200px) {
-    #front-image {
+    .main-image {
         background-size: contain;
     }
 }
