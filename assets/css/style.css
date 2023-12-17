@@ -10,6 +10,7 @@ body {
 }
 main {
     height: 100%;
+    flex: 1 0 auto;
 }
 #front-image {
     width: 100%;
@@ -20,4 +21,21 @@ h1 {
     font-family: 'Rubik Doodle Shadow', sans-serif;
     font-size: 3.8rem;
     margin-left: 1rem;
+}
+#socials-container {
+    list-style-type: none;
+    font-size: 2.5rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 0;
+}
+footer a {
+    color: black;
+}
+@media screen and (min-width: 1200px) {
+    #front-image {
+        background-size: contain;
+    }
 }
