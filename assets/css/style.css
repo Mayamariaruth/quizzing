@@ -1,0 +1,12 @@
+body, html {
+    overflow: auto;
+}
+body {
+    background-color: #f1ecce;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#front-image {
+   width: 100%;
+}
