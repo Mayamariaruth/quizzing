@@ -1,6 +1,5 @@
 /* Credit: Codehal YT video: https://www.youtube.com/watch?v=Vp8x8-reqZA&ab_channel=Codehal */
-Let questions = [ {
-    nr: 1,
+let questions = [ {
     question: 'Who is known as the "King of Pop"?',
     answer: "Michael Jackson",
     options: [
@@ -11,7 +10,6 @@ Let questions = [ {
     ]
 },
 {
-    nr: 2,
     question: 'What is the largest planet in our solar system?',
     answer: "Jupiter",
     options: [
@@ -22,7 +20,6 @@ Let questions = [ {
     ]
 },
 {
-    nr: 3,
     question: 'What is the capital city of Australia?',
     answer: "Canberra",
     options: [
@@ -33,7 +30,6 @@ Let questions = [ {
     ]
 },
 {
-    nr: 4,
     question: 'What is the currency of Japan?',
     answer: "Yen",
     options: [
@@ -44,7 +40,6 @@ Let questions = [ {
     ]
 },
 {
-    nr: 5,
     question: 'Who was the first President of the United States?',
     answer: "George Washington",
     options: [
@@ -57,10 +52,21 @@ Let questions = [ {
 ]
 
 function showQuestions(index) {
-    
+    let question = document.getElementById('question');
+    question.textContent = `${questions[index].question}`;
 }
 
-/* Credit: CI Love Maths project */
+let questionCount = 0;
+
+let nextBtn = document.getElementById('next-btn');
+nextBtn.onclick = function() {
+    questionCount++;
+    showQuestions(questionCount);
+}
+
+showQuestions()
+nextBtn()
+
 function checkAnswer() {
 
 }
