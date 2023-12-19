@@ -54,21 +54,25 @@ let questions = [ {
 function showQuestions(index) {
     let question = document.getElementById('question');
     question.textContent = `${questions[index].question}`;
+    let option = document.getElementById('answer-opt');
+    option.textContent = `${questions[index].options[index]}`;
 }
 
 let questionCount = 0;
+let optionCount = 0;
 
 let nextBtn = document.getElementById('next-btn');
 nextBtn.onclick = function() {
     questionCount++;
-    showQuestions(questionCount);
+    optionCount++;
+    showQuestions(questionCount, optionCount);
 }
 
 showQuestions()
 nextBtn()
 
 function checkAnswer() {
-
+    
 }
 
 function correctAnswer() {
