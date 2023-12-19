@@ -36,7 +36,7 @@
         <!-- Quiz -->
         <section class="center">
             <div class="quiz-area">
-                <h2 class="question-header">Question 1</h2>
+                <h2 class="question-header">Question <span id="question-number">1</span></h2>
 
                 <div class="questions">
                     <span id="question">Who is known as the "King of Pop"?</span>
@@ -45,12 +45,12 @@
                 <p id="choose-text">Please choose one answer below</p>
 
                 <div class="answers">
-                    <div class="answer-opt" data-answer="first-answer">Chris Brown</div>
-                    <div class="answer-opt" data-answer="second-answer">Elvis Presley</div>
-                    <div class="answer-opt" data-answer="third-answer">Sean Paul</div>
-                    <div class="answer-opt" data-answer="fourth-answer">Michael Jackson</div>
+                    <button class="answer-opt" data-answer="first-answer">Chris Brown</button>
+                    <button class="answer-opt" data-answer="second-answer">Elvis Presley</button>
+                    <button class="answer-opt" data-answer="third-answer">Sean Paul</button>
+                    <button class="answer-opt" data-answer="fourth-answer">Michael Jackson</button>
                 </div>
-                <div class="scores">Your score: 0 / 5</div>
+                <div class="scores">Your score: <span id="score">0</span> / 5</div>
 
                 <div class="quiz-btns">
                     <a href="index.html" id="exit-btn">

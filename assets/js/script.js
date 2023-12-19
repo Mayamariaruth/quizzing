@@ -1,16 +1,29 @@
-/**
- * Variables
- */
+// Variables
 const choiceButtonRef = document.getElementsByClassName("answer-opt");
-console.log(choiceButtonRef);
 const questionCount = 0;
 const optionCount = 0;
 const nextBtn = document.getElementById('next-btn');
 
-/**
- * Quiz questions, options and correct answer
- */
-/* Credit: Codehal YT video: https://www.youtube.com/watch?v=Vp8x8-reqZA&ab_channel=Codehal */
+/*
+// Event listeners
+document.addEventListener("DOMContentLoaded", function() {
+    let buttons = document.getElementsByTagName("button");
+
+    for (let button of buttons) {
+        button.addEventListener("click", function() {
+            if (this.getAttribute("data-answer")) {
+                alert(`You clicked ${dataAnswer}`);
+            } else {
+                let dataAnswer = this.getAttribute("data-answer");
+                alert(`You clicked ${dataAnswer}`);
+            }
+        })
+    }
+})
+/*/
+
+// Quiz questions, options and correct answer
+// Credit: Codehal YT video: https://www.youtube.com/watch?v=Vp8x8-reqZA&ab_channel=Codehal
 let questions = [{
     question: 'Who is known as the "King of Pop"?',
     answer: "Michael Jackson",
@@ -77,6 +90,14 @@ function changeOptions(index) {
         choiceButtonRef[i].textContent = `${questions[index].options[i]}`
     }
 }
+/*
+function changeQuestionNumb() {
+    let questionNumb = parseInt(document.getElementById('question-number').innerText);
+    for (let i) {
+
+    }
+}
+*/
 
 /**
  * Next button
