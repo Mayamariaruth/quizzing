@@ -8,7 +8,8 @@ body {
     background-color: #f1ecce;
     display: flex;
     flex-direction: column;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 2000px;
 }
 /* Logo */
 header > a {
@@ -86,17 +87,17 @@ h2 {
     font-size: 1.3rem;
 }
 
-.answers, #answer-opt {
+.answers, .answer-opt {
     border: solid 1px black;
 }
 
-#answer-opt {
+.answer-opt {
     padding: 1rem;
     font-size: 1.3rem;
     background: linear-gradient(185deg, transparent, #ef7a16, transparent);
 }
 
-#answer-opt:hover, #answer-opt:active {
+.answer-opt:hover, .answer-opt:active {
     border: solid 2.5px black;
 }
 
