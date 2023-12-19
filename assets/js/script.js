@@ -1,5 +1,17 @@
+/**
+ * Variables
+ */
+const choiceButtonRef = document.getElementsByClassName("answer-opt");
+console.log(choiceButtonRef);
+const questionCount = 0;
+const optionCount = 0;
+const nextBtn = document.getElementById('next-btn');
+
+/**
+ * Quiz questions, options and correct answer
+ */
 /* Credit: Codehal YT video: https://www.youtube.com/watch?v=Vp8x8-reqZA&ab_channel=Codehal */
-let questions = [ {
+let questions = [{
     question: 'Who is known as the "King of Pop"?',
     answer: "Michael Jackson",
     options: [
@@ -51,38 +63,58 @@ let questions = [ {
 }
 ]
 
+/**
+ * Change questions and answers when pressing Next button
+ */
 function showQuestions(index) {
     let question = document.getElementById('question');
     question.textContent = `${questions[index].question}`;
-    let option = document.getElementById('answer-opt');
-    option.textContent = `${questions[index].options[index]}`;
+    changeOptions(index);
 }
 
-let questionCount = 0;
-let optionCount = 0;
+function changeOptions(index) {
+    for (let i = 0; i < choiceButtonRef.length; i++) {
+        choiceButtonRef[i].textContent = `${questions[index].options[i]}`
+    }
+}
 
-let nextBtn = document.getElementById('next-btn');
-nextBtn.onclick = function() {
+/**
+ * Next button
+ */
+nextBtn.onclick = function () {
     questionCount++;
     optionCount++;
     showQuestions(questionCount, optionCount);
 }
 
-showQuestions()
-nextBtn()
-
+/**
+ * Check answer
+ */
 function checkAnswer() {
-    
+
 }
 
+/**
+ * Correct answer
+ */
 function correctAnswer() {
 
 }
-
+/**
+ * Wrong answer
+ */
 function wrongAnswer() {
 
 }
-
+/**
+ * Score calculation
+ */
 function incrementCorrectScore() {
+
+}
+/**
+ * End of Quiz popup
+ */
+function finishQuiz() {
 
 }

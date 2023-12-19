@@ -1,9 +1,11 @@
 /* Body */
-body, html {
+body,
+html {
     width: 100%;
     height: 100%;
     font-family: lato, sans-serif;
 }
+
 body {
     background-color: #f1ecce;
     display: flex;
@@ -11,36 +13,43 @@ body {
     margin: 0 auto;
     max-width: 2000px;
 }
+
 /* Logo */
-header > a {
+header>a {
     text-decoration: none;
     color: black;
 }
+
 #logo {
     font-family: 'Rubik Doodle Shadow', sans-serif;
     font-size: 3.8rem;
     margin-left: 1rem;
 }
+
 /* Main content */
 main {
-/* Credit: CI Love running project */
+    /* Credit: CI Love running project */
     min-height: 100vh;
     flex: 1 0 auto;
 }
+
 .main-image {
     background: url(../images/front.jpeg) no-repeat center center/cover;
 }
+
 .start-area {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-top: 100px;
 }
+
 #start-text {
     font-family: lato, sans-serif;
     font-size: 3rem;
     text-align: center;
 }
+
 #start-btn {
     padding: 1rem 4rem;
     font-size: 2.6rem;
@@ -51,9 +60,11 @@ main {
     text-decoration: none;
     color: black;
 }
+
 #start-btn:hover {
     box-shadow: 7px 10px black;
 }
+
 /* Quiz */
 .quiz-area {
     display: flex;
@@ -65,12 +76,14 @@ main {
     font-size: 1.2rem;
     text-align: center;
 }
+
 .center {
     display: flex;
     justify-content: center;
     position: relative;
     top: 4rem;
 }
+
 h2 {
     margin-top: 0;
     font-size: 2rem;
@@ -87,7 +100,8 @@ h2 {
     font-size: 1.3rem;
 }
 
-.answers, .answer-opt {
+.answers,
+.answer-opt {
     border: solid 1px black;
 }
 
@@ -97,7 +111,8 @@ h2 {
     background: linear-gradient(185deg, transparent, #ef7a16, transparent);
 }
 
-.answer-opt:hover, .answer-opt:active {
+.answer-opt:hover,
+.answer-opt:active {
     border: solid 2.5px black;
 }
 
@@ -117,7 +132,8 @@ h2 {
     color: black;
 }
 
-#exit-btn:hover, #next-btn:hover {
+#exit-btn:hover,
+#next-btn:hover {
     border: solid 2px black;
 }
 
@@ -142,14 +158,17 @@ h2 {
     padding: 0;
     margin-top: 8rem;
 }
+
 footer a {
     color: black;
 }
+
 @media screen and (min-width: 768px) {
     .main-image {
         background-size: contain;
     }
 }
+
 @media screen and (min-width: 1200px) {
     .main-image {
         background-size: contain;
