@@ -281,14 +281,14 @@ Live link to the site - [Quizzing]()
     * Added 'checkAnswer(this)' in the 'onclick' HTML element.
 
 2. **Issue**
-    * 'showQuestions' function kept getting error that '.question' was not defined at end of quiz.
+    * 'showQuestions' function kept getting error that '.question' was not defined when pressing the Next button at the end of the quiz.
 * **Fix**
-    * 
+    * Added the 'finishQuiz' function and it was then sorted.
 
 3. **Issue**
-    * 
+    * 'finishQuiz' function was not registering the Display style settings so the end of quiz popup was not popping up after quiz was over.
 * **Fix**
-    * 
+    * Changed the class tag to an ID tag on the HTML elements.
 
 4. **Issue**
     * 

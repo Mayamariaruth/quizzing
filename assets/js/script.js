@@ -1,34 +1,14 @@
 // Variables
-const quizArea = document.getElementsByClassName('quiz-area');
 const questionNumb = document.getElementById('question-number');
 const questionOpt = document.getElementById('question');
 const choiceButtonRef = document.getElementsByClassName("answer-opt");
 const answers = document.getElementsByClassName('answers');
 const nextBtn = document.getElementById('next-btn');
 const score = document.getElementById('score');
-const endPopup = document.getElementsByClassName('end-popup');
 let questionNumber = 1;
 let questionCount = 0;
 let optionCount = 0;
 let scoreSum = 0;
-
-/*
-// Event listeners
-document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.getElementsByTagName("button");
-
-    for (let button of buttons) {
-        button.addEventListener("click", function() {
-            if (this.getAttribute("data-answer")) {
-                checkAnswer();
-            } else {
-                let dataAnswer = this.getAttribute("data-answer");
-            
-            }
-        })
-    }
-})
-*/
 
 // Quiz questions, options and correct answer
 let questions = [{
@@ -163,7 +143,7 @@ nextBtn.onclick = function () {
     changeOptions(optionCount);
     changeQuestionNumb(questionNumber);
 
-    if (questionCount === questions.length) {
+    if (questionNumber === questions.length) {
         finishQuiz();
     }
 }
@@ -193,6 +173,7 @@ function checkAnswer(answer) {
  * End of Quiz popup
  */
 function finishQuiz() {
-    quizArea.style.display = 'none';
-    endPopup.style.display = 'flex';
+    document.getElementById('quiz-area').style.display = 'none';
+    document.getElementById('end-popup').style.display = 'flex';
+    /* SCORE */
 }

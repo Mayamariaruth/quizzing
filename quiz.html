@@ -35,7 +35,7 @@
     <main class="main-image">
         <!-- Quiz -->
         <section class="center">
-            <div class="quiz-area">
+            <div id="quiz-area" style="display: flex;">
                 <h2 class="question-header">Question <span id="question-number">1</span></h2>
 
                 <div class="questions">
@@ -45,10 +45,10 @@
                 <p id="choose-text">Please choose one answer below</p>
 
                 <div class="answers">
-                    <button class="answer-opt" onclick="checkAnswer(this)" data-answer="first-answer">Chris Brown</button>
-                    <button class="answer-opt" onclick="checkAnswer(this)" data-answer="second-answer">Elvis Presley</button>
-                    <button class="answer-opt" onclick="checkAnswer(this)" data-answer="third-answer">Sean Paul</button>
-                    <button class="answer-opt" onclick="checkAnswer(this)" data-answer="fourth-answer">Michael Jackson</button>
+                    <button class="answer-opt" onclick="checkAnswer(this)">Chris Brown</button>
+                    <button class="answer-opt" onclick="checkAnswer(this)">Elvis Presley</button>
+                    <button class="answer-opt" onclick="checkAnswer(this)">Sean Paul</button>
+                    <button class="answer-opt" onclick="checkAnswer(this)">Michael Jackson</button>
                 </div>
                 <div class="scores">Your score: <span id="score">0</span> / 10</div>
 
@@ -62,7 +62,7 @@
         </section>
         <!-- End of quiz popup-->
         <section class="center">
-            <div class="end-popup">
+            <div id="end-popup" style="display: none;">
                 <h3>Well done!</h3>
                 <div class="scores" id="final-score">Your score: <span id="score">0</span> / 10</div>
                 <div class="quiz-btns">

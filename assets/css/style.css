@@ -66,8 +66,7 @@ main {
 }
 
 /* Quiz */
-.quiz-area {
-    display: flex;
+#quiz-area {
     flex-direction: column;
     border: solid 3px black;
     background-color: #f1ecce;
@@ -138,11 +137,6 @@ h2 {
     border-color: red;
 }
 
-.answers.disable,
-answer-opt.disable {
-    pointer-events: none;
-}
-
 .scores {
     padding: 1.2rem;
     font-size: 1.3rem;
@@ -177,8 +171,7 @@ answer-opt.disable {
 }
 
 /* End of quiz popup */
-.end-popup {
-    display: none;
+#end-popup {
     flex-direction: column;
     border: solid 3px black;
     background-color: #f1ecce;
