@@ -2,6 +2,9 @@
 const choiceButtonRef = document.getElementsByClassName("answer-opt");
 const nextBtn = document.getElementById('next-btn');
 const score = document.getElementById('score');
+const answers = document.getElementsByClassName('answers');
+const quizArea = document.getElementsByClassName('quiz-area');
+const endPopup = document.getElementsByClassName('end-popup');
 let questionCount = 0;
 let optionCount = 0;
 let questionNumber = 1;
@@ -83,30 +86,36 @@ let questions = [{
  */
 function showQuestions(index) {
     let question = document.getElementById('question');
-    question.textContent = `${questions[index].question}`;
+    question.innerHTML = `${questions[index].question}`;
     changeOptions(index);
 }
 
 function changeOptions(index) {
     for (let i = 0; i < choiceButtonRef.length; i++) {
-        choiceButtonRef[i].textContent = `${questions[index].options[i]}`;
+        choiceButtonRef[i].innerHTML = `${questions[index].options[i]}`;
     }
 }
 
 function changeQuestionNumb(index) {
     const questionNumb = document.getElementById('question-number');
-    questionNumb.textContent = `${index}`;
+    questionNumb.innerHTML = `${index}`;
 }
 
 /**
  * Next button
  */
-nextBtn.onclick = function() {
-    questionCount++;
-    optionCount++;
-    questionNumber++;
-    showQuestions(questionCount, optionCount);
-    changeQuestionNumb(questionNumber);
+// Credit: Codehal YT video: https://www.youtube.com/watch?v=Vp8x8-reqZA&ab_channel=Codehal
+nextBtn.onclick = function () {
+    if (questionCount < questions.length) {
+        questionCount++;
+        optionCount++;
+        questionNumber++;
+        showQuestions(questionCount, optionCount);
+        changeQuestionNumb(questionNumber);
+
+    } else {
+        finishQuiz();
+    }
 }
 
 /**
@@ -127,8 +136,14 @@ function checkAnswer(answer) {
 }
 
 /**
+ * DISABLE BUTTONS AFTER CHECKANSWER
+ */
+
+
+/**
  * End of Quiz popup
  */
 function finishQuiz() {
-
+    quizArea.style.display = 'none';
+    endPopup.style.display = 'flex';
 }

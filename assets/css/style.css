@@ -67,7 +67,7 @@ main {
 
 /* Quiz */
 .quiz-area {
-    display: flex;
+    display: none;
     flex-direction: column;
     border: solid 3px black;
     background-color: #f1ecce;
@@ -126,14 +126,21 @@ h2 {
     font-size: 1.5rem;
 }
 
-.answers.correct-answer, .answer-opt.correct-answer {
+.answers.correct-answer,
+.answer-opt.correct-answer {
     color: green;
     border-color: green;
 }
 
-.answers.incorrect-answer, .answer-opt.incorrect-answer {
+.answers.incorrect-answer,
+.answer-opt.incorrect-answer {
     color: red;
     border-color: red;
+}
+
+.answers.disable,
+answer-opt.disable {
+    pointer-events: none;
 }
 
 .scores {
@@ -153,11 +160,13 @@ h2 {
 }
 
 #exit-btn:hover,
-#next-btn:hover, #again-btn:hover {
+#next-btn:hover,
+#again-btn:hover {
     border: solid 2px black;
 }
 
-#next-btn, #again-btn {
+#next-btn,
+#again-btn {
     margin-left: 1rem;
     padding: 7px 20px 7px 20px;
     margin-left: 1rem;
@@ -165,6 +174,34 @@ h2 {
     border-radius: 9px;
     background: linear-gradient(185deg, transparent, #ef7a16, #dd480e, transparent);
     border: none;
+}
+
+/* End of quiz popup */
+.end-popup {
+    display: flex;
+    flex-direction: column;
+    border: solid 3px black;
+    background-color: #f1ecce;
+    padding: 1rem;
+    width: fit-content;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 3rem;
+    font-family: 'Rubik Doodle Shadow', sans-serif;
+}
+
+#final-score {
+    font-size: 1.7rem;
+    position: relative;
+    bottom: 2.8rem;
+}
+
+#again-btn {
+    text-decoration: none;
+    color: black;
 }
 
 /* Footer */
