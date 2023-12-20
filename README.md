@@ -281,7 +281,7 @@ Live link to the site - [Quizzing]()
     * Added 'checkAnswer(this)' in the 'onclick' HTML element.
 
 2. **Issue**
-    * 
+    * 'showQuestions' function kept getting error that '.question' was not defined at end of quiz.
 * **Fix**
     * 
 
@@ -313,22 +313,18 @@ No unfixed bugs.
 
 ### Code 
 
-_Code Institute's Love Maths Project credit_
-- The navigation toggle button.
-- Use the Main section to push the footer down.
-
 _External pages credit_
-- I drew help from [Codehal YouTube](https://www.youtube.com/watch?v=Vp8x8-reqZA&ab_channel=Codehal) for JavaScript. Some code is 
-- The lines on either side of the image in the About Me section were drawn from [Daniel Vassallo's comment on StackOverflow](https://stackoverflow.com/questions/3148415/how-to-make-a-vertical-line-in-html#:~:text=You%20can%20draw%20a%20vertical,width%20with%20any%20html%20element.&text=The%20width%20property%20determines%20the,the%20color%20of%20the%20line.).
+- I drew help from [Codehal YouTube](https://www.youtube.com/watch?v=Vp8x8-reqZA&ab_channel=Codehal) for some of the code found in the 'nextBtn' function and 'checkAnswer'function.
+
+
+- W3Schools and StackOverflow 
 
 ### Content 
 
-- The texts for the home page were provided by the client Denice Hedstrom.
-- The offerings on the services page were provided by Denice Hedstrom.
-- The social media links were provided by Denice Hedstrom and link to her real Instagram page and Youtube channel.
+- The questions and answers were generated with ChatGPT.
+- The social media links direct to the homepages of each site.
 - The contact form is a mock form that opens a fourth page with a thank you note.
-- The icons in the footer/navigation bar were taken from [Font Awesome](https://fontawesome.com/)
-- The meditation link in the footer was shared by Denice Hedstrom.
+- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 
 ### Media
 

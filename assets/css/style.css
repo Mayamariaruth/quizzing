@@ -67,7 +67,7 @@ main {
 
 /* Quiz */
 .quiz-area {
-    display: none;
+    display: flex;
     flex-direction: column;
     border: solid 3px black;
     background-color: #f1ecce;
@@ -178,7 +178,7 @@ answer-opt.disable {
 
 /* End of quiz popup */
 .end-popup {
-    display: flex;
+    display: none;
     flex-direction: column;
     border: solid 3px black;
     background-color: #f1ecce;

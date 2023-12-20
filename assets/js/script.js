@@ -1,13 +1,15 @@
 // Variables
+const quizArea = document.getElementsByClassName('quiz-area');
+const questionNumb = document.getElementById('question-number');
+const questionOpt = document.getElementById('question');
 const choiceButtonRef = document.getElementsByClassName("answer-opt");
+const answers = document.getElementsByClassName('answers');
 const nextBtn = document.getElementById('next-btn');
 const score = document.getElementById('score');
-const answers = document.getElementsByClassName('answers');
-const quizArea = document.getElementsByClassName('quiz-area');
 const endPopup = document.getElementsByClassName('end-popup');
+let questionNumber = 1;
 let questionCount = 0;
 let optionCount = 0;
-let questionNumber = 1;
 let scoreSum = 0;
 
 /*
@@ -78,6 +80,56 @@ let questions = [{
         "Abraham Lincoln",
         "George Washington"
     ]
+},
+{
+    question: 'Who was the first woman to win a Nobel Prize?',
+    answer: "Marie Curie",
+    options: [
+        "Jane Goodall",
+        "Marie Curie",
+        "Malala Yousafzai",
+        "Wangari Maathai"
+    ]
+},
+{
+    question: 'What is the chemical symbol for gold?',
+    answer: "Au",
+    options: [
+        "Mg",
+        "Ag",
+        "Au",
+        "Rb"
+    ]
+},
+{
+    question: 'What is the longest river in the world?',
+    answer: "Nile River",
+    options: [
+        "Nile River",
+        "Amazon River",
+        "Niger River",
+        "Missouri River"
+    ]
+},
+{
+    question: 'What is the capital city of South Korea?',
+    answer: "Seoul",
+    options: [
+        "Hong Kong",
+        "Incheon",
+        "Busan",
+        "Seoul"
+    ]
+},
+{
+    question: 'Which scientist formulated the laws of motion and universal gravitation?',
+    answer: "Sir Isaac Newton",
+    options: [
+        "Nikola Tesla",
+        "Albert Einstein",
+        "Sir Isaac Newton",
+        "Charles Darwin"
+    ]
 }
 ]
 
@@ -85,9 +137,9 @@ let questions = [{
  * Change questions and answers when pressing Next button
  */
 function showQuestions(index) {
-    let question = document.getElementById('question');
-    question.innerHTML = `${questions[index].question}`;
-    changeOptions(index);
+    for (let i = 0; i < questions.length; i++) {
+        questionOpt.innerHTML = `${questions[index].question}`;
+    }
 }
 
 function changeOptions(index) {
@@ -97,23 +149,21 @@ function changeOptions(index) {
 }
 
 function changeQuestionNumb(index) {
-    const questionNumb = document.getElementById('question-number');
     questionNumb.innerHTML = `${index}`;
 }
 
 /**
  * Next button
  */
-// Credit: Codehal YT video: https://www.youtube.com/watch?v=Vp8x8-reqZA&ab_channel=Codehal
 nextBtn.onclick = function () {
-    if (questionCount < questions.length) {
-        questionCount++;
-        optionCount++;
-        questionNumber++;
-        showQuestions(questionCount, optionCount);
-        changeQuestionNumb(questionNumber);
+    questionCount++;
+    optionCount++;
+    questionNumber++;
+    showQuestions(questionCount);
+    changeOptions(optionCount);
+    changeQuestionNumb(questionNumber);
 
-    } else {
+    if (questionCount === questions.length) {
         finishQuiz();
     }
 }
@@ -121,7 +171,6 @@ nextBtn.onclick = function () {
 /**
  * Check answer
  */
-// Credit: Codehal YT video: https://www.youtube.com/watch?v=Vp8x8-reqZA&ab_channel=Codehal
 function checkAnswer(answer) {
     let userAnswer = answer.textContent;
     let correctAnswer = questions[questionCount].answer;
