@@ -116,9 +116,24 @@ h2 {
     background: linear-gradient(185deg, transparent, #ef7a16, transparent);
 }
 
-.answer-opt:hover,
+.answer-opt:hover {
+    border: solid 1.5px black;
+    font-size: 1.4rem;
+}
+
 .answer-opt:active {
     border: solid 2.5px black;
+    font-size: 1.5rem;
+}
+
+.answers.correct-answer, .answer-opt.correct-answer {
+    color: green;
+    border-color: green;
+}
+
+.answers.incorrect-answer, .answer-opt.incorrect-answer {
+    color: red;
+    border-color: red;
 }
 
 .scores {
@@ -138,11 +153,11 @@ h2 {
 }
 
 #exit-btn:hover,
-#next-btn:hover {
+#next-btn:hover, #again-btn:hover {
     border: solid 2px black;
 }
 
-#next-btn {
+#next-btn, #again-btn {
     margin-left: 1rem;
     padding: 7px 20px 7px 20px;
     margin-left: 1rem;

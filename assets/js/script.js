@@ -1,8 +1,11 @@
 // Variables
 const choiceButtonRef = document.getElementsByClassName("answer-opt");
-const questionCount = 0;
-const optionCount = 0;
 const nextBtn = document.getElementById('next-btn');
+const score = document.getElementById('score');
+let questionCount = 0;
+let optionCount = 0;
+let questionNumber = 1;
+let scoreSum = 0;
 
 /*
 // Event listeners
@@ -12,18 +15,17 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-answer")) {
-                alert(`You clicked ${dataAnswer}`);
+                checkAnswer();
             } else {
                 let dataAnswer = this.getAttribute("data-answer");
-                alert(`You clicked ${dataAnswer}`);
+            
             }
         })
     }
 })
-/*/
+*/
 
 // Quiz questions, options and correct answer
-// Credit: Codehal YT video: https://www.youtube.com/watch?v=Vp8x8-reqZA&ab_channel=Codehal
 let questions = [{
     question: 'Who is known as the "King of Pop"?',
     answer: "Michael Jackson",
@@ -87,52 +89,43 @@ function showQuestions(index) {
 
 function changeOptions(index) {
     for (let i = 0; i < choiceButtonRef.length; i++) {
-        choiceButtonRef[i].textContent = `${questions[index].options[i]}`
+        choiceButtonRef[i].textContent = `${questions[index].options[i]}`;
     }
 }
-/*
-function changeQuestionNumb() {
-    let questionNumb = parseInt(document.getElementById('question-number').innerText);
-    for (let i) {
 
-    }
+function changeQuestionNumb(index) {
+    const questionNumb = document.getElementById('question-number');
+    questionNumb.textContent = `${index}`;
 }
-*/
 
 /**
  * Next button
  */
-nextBtn.onclick = function () {
+nextBtn.onclick = function() {
     questionCount++;
     optionCount++;
+    questionNumber++;
     showQuestions(questionCount, optionCount);
+    changeQuestionNumb(questionNumber);
 }
 
 /**
  * Check answer
  */
-function checkAnswer() {
+// Credit: Codehal YT video: https://www.youtube.com/watch?v=Vp8x8-reqZA&ab_channel=Codehal
+function checkAnswer(answer) {
+    let userAnswer = answer.textContent;
+    let correctAnswer = questions[questionCount].answer;
 
+    if (userAnswer === correctAnswer) {
+        scoreSum++;
+        score.textContent = scoreSum;
+        answer.classList.add('correct-answer')
+    } else {
+        answer.classList.add('incorrect-answer')
+    }
 }
 
-/**
- * Correct answer
- */
-function correctAnswer() {
-
-}
-/**
- * Wrong answer
- */
-function wrongAnswer() {
-
-}
-/**
- * Score calculation
- */
-function incrementCorrectScore() {
-
-}
 /**
  * End of Quiz popup
  */
