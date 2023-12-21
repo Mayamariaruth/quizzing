@@ -2,9 +2,9 @@
 const questionNumb = document.getElementById('question-number');
 const questionOpt = document.getElementById('question');
 const choiceButtonRef = document.getElementsByClassName("answer-opt");
-const answers = document.getElementsByClassName('answers');
 const nextBtn = document.getElementById('next-btn');
 const score = document.getElementById('score');
+const disableOptions = choiceButtonRef.length;
 let questionNumber = 1;
 let questionCount = 0;
 let optionCount = 0;
@@ -111,7 +111,9 @@ const questions = [{
         "Charles Darwin"
     ]
 }
-]
+];
+
+let correctAnswer = questions[questionCount].answer;
 
 /**
  * Change questions and answers when pressing Next button
@@ -142,7 +144,12 @@ nextBtn.onclick = function () {
     showQuestions(questionCount);
     changeOptions(optionCount);
     changeQuestionNumb(questionNumber);
-    // setInterval();
+
+    /*
+    answer.classList.remove('correct-answer');
+    answer.classList.remove('incorrect-answer')
+    choiceButtonRef[i].classList.remove('disabled');
+    */
 
     if (questionNumber === questions.length) {
         finishQuiz();
@@ -153,16 +160,13 @@ nextBtn.onclick = function () {
  * Check answer (Credit: Codehal)
  */
 function checkAnswer(answer) {
-    let userAnswer = answer.innerHTML;
-    let correctAnswer = questions[questionCount].answer;
-    let disableOptions = choiceButtonRef.length;
-
+    let userAnswer = answer.textContent;
     if (userAnswer === correctAnswer) {
         scoreSum++;
         score.textContent = scoreSum;
-        answer.classList.add('correct-answer')
+        answer.classList.add('correct-answer');
     } else {
-        answer.classList.add('incorrect-answer')
+        answer.classList.add('incorrect-answer');
     }
 
     // Disable answers after user selected
@@ -171,26 +175,12 @@ function checkAnswer(answer) {
     }
 }
 
-/*
-let time = 15;
-let timer = setInterval(function() {
-    document.getElementById('timer').textContent = time;
-    time--;
-    if (time === 0) {
-        clearInterval(timer);
-        time = 0;
-        console.log("Oh no, you're out of time!");
-    }
-}, 1000);
-*/
-
 /**
  * End of Quiz popup
  */
 function finishQuiz() {
     document.getElementById('quiz-area').style.display = 'none';
     document.getElementById('end-popup').style.display = 'flex';
-    // Score not showing?????
     const totalScore = document.getElementById('total-score');
     totalScore.textContent = scoreSum;
 }

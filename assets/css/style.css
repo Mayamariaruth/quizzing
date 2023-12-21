@@ -88,6 +88,11 @@ h2 {
     font-size: 2rem;
 }
 
+#timer {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
 .questions {
     background: linear-gradient(180deg, transparent, #ef7a16, #dd480e, transparent);
     font-size: 1.4rem;
@@ -99,12 +104,12 @@ h2 {
     font-size: 1.3rem;
 }
 
-.answers {
+#answers {
     display: flex;
     flex-direction: column;
 }
 
-.answers,
+#answers,
 .answer-opt {
     border: solid 1px black;
 }
@@ -116,26 +121,23 @@ h2 {
 }
 
 .answer-opt:hover {
-    border: solid 1.5px black;
-    font-size: 1.4rem;
-}
-
-.answer-opt:active {
     border: solid 2.5px black;
     font-size: 1.5rem;
 }
 
 .answer-opt.correct-answer {
     color: green;
-    border-color: green;
+    border: solid 2px green;
+    font-size: 1.5rem;
 }
 
 .answer-opt.incorrect-answer {
     color: red;
-    border-color: red;
+    border: solid 2px red;
+    font-size: 1.5rem;
 }
 
-.answers .answer-opt.disabled {
+#answers .answer-opt.disabled {
     pointer-events: none;
 }
 
