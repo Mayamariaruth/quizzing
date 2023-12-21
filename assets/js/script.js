@@ -133,7 +133,7 @@ function changeQuestionNumb(index) {
 }
 
 /**
- * Next button
+ * Next button (Credit: Codehal)
  */
 nextBtn.onclick = function () {
     questionCount++;
@@ -149,11 +149,12 @@ nextBtn.onclick = function () {
 }
 
 /**
- * Check answer
+ * Check answer (Credit: Codehal)
  */
 function checkAnswer(answer) {
-    let userAnswer = answer.textContent;
+    let userAnswer = answer.innerHTML;
     let correctAnswer = questions[questionCount].answer;
+    let disableOptions = choiceButtonRef.length;
 
     if (userAnswer === correctAnswer) {
         scoreSum++;
@@ -162,12 +163,12 @@ function checkAnswer(answer) {
     } else {
         answer.classList.add('incorrect-answer')
     }
+
+    // Disable answers after user selected
+    for (let i = 0; i < disableOptions; i++) {
+        choiceButtonRef[i].classList.add('disabled');
+    }
 }
-
-/**
- * DISABLE BUTTONS AFTER CHECKANSWER
- */
-
 
 /**
  * End of Quiz popup
@@ -175,5 +176,6 @@ function checkAnswer(answer) {
 function finishQuiz() {
     document.getElementById('quiz-area').style.display = 'none';
     document.getElementById('end-popup').style.display = 'flex';
-    /* SCORE */
+    // Score not showing?????
+    score.textContent = scoreSum;
 }

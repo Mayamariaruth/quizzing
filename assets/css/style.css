@@ -125,16 +125,18 @@ h2 {
     font-size: 1.5rem;
 }
 
-.answers.correct-answer,
 .answer-opt.correct-answer {
     color: green;
     border-color: green;
 }
 
-.answers.incorrect-answer,
 .answer-opt.incorrect-answer {
     color: red;
     border-color: red;
+}
+
+.answers .answer-opt.disabled {
+    pointer-events: none;
 }
 
 .scores {
