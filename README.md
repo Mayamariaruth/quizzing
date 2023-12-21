@@ -291,9 +291,9 @@ Live link to the site - [Quizzing]()
     * Changed the class tag to an ID tag on the HTML elements.
 
 4. **Issue**
-    * 
+    * Score not showing up on end of quiz popup.
 * **Fix**
-    * 
+    * Added a new ID tag to the element and a variable 'totalScore' and it's textContent equaled the scoreSum in the 'finishQuiz' function.
 
 5. **Issue**
     * 

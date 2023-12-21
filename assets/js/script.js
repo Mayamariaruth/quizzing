@@ -11,7 +11,7 @@ let optionCount = 0;
 let scoreSum = 0;
 
 // Quiz questions, options and correct answer
-let questions = [{
+const questions = [{
     question: 'Who is known as the "King of Pop"?',
     answer: "Michael Jackson",
     options: [
@@ -142,6 +142,7 @@ nextBtn.onclick = function () {
     showQuestions(questionCount);
     changeOptions(optionCount);
     changeQuestionNumb(questionNumber);
+    // setInterval();
 
     if (questionNumber === questions.length) {
         finishQuiz();
@@ -170,6 +171,19 @@ function checkAnswer(answer) {
     }
 }
 
+/*
+let time = 15;
+let timer = setInterval(function() {
+    document.getElementById('timer').textContent = time;
+    time--;
+    if (time === 0) {
+        clearInterval(timer);
+        time = 0;
+        console.log("Oh no, you're out of time!");
+    }
+}, 1000);
+*/
+
 /**
  * End of Quiz popup
  */
@@ -177,5 +191,6 @@ function finishQuiz() {
     document.getElementById('quiz-area').style.display = 'none';
     document.getElementById('end-popup').style.display = 'flex';
     // Score not showing?????
-    score.textContent = scoreSum;
+    const totalScore = document.getElementById('total-score');
+    totalScore.textContent = scoreSum;
 }

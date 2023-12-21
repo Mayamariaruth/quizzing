@@ -191,12 +191,16 @@ h3 {
 #final-score {
     font-size: 1.7rem;
     position: relative;
-    bottom: 2.8rem;
+    bottom: 2.2rem;
 }
 
 #again-btn {
     text-decoration: none;
     color: black;
+}
+
+#end-btns {
+    margin-bottom: 1rem;
 }
 
 /* Footer */
