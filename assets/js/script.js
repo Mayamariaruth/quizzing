@@ -1,9 +1,11 @@
-// Variables
+// DOM elements saved as variables
 const questionNumb = document.getElementById('question-number');
 const questionOpt = document.getElementById('question');
 const choiceButtonRef = document.getElementsByClassName("answer-opt");
 const nextBtn = document.getElementById('next-btn');
 const score = document.getElementById('score');
+
+// Global DOM elements saved as variables
 const disableOptions = choiceButtonRef.length;
 let questionNumber = 1;
 let questionCount = 0;
@@ -114,16 +116,27 @@ const questions = [{
 ];
 
 /**
- * Run game
+ * Makes sure the elements in the DOM is loaded before the event listener function (click function for when user selects an answer)
  */
-function runGame() {
+document.addEventListener('DOMContentLoaded', function() {
+    for (let i = 0; i < choiceButtonRef.length; i++) {
+        choiceButtonRef[i].addEventListener("click", function () {
+            checkAnswer(this);
+        });
+    }
+});
+
+/**
+ * When next button is clicked, the questions/options/question number functions are called and continues to the next index
+ */
+function continueGame() {
     showQuestions(questionCount);
     changeOptions(optionCount);
     changeQuestionNumb(questionNumber);
 }
 
 /**
- * Change questions and answers when pressing Next button
+ * Changes question by displaying the next index of the text content
  */
 function showQuestions(index) {
     for (let i = 0; i < questions.length; i++) {
@@ -131,58 +144,85 @@ function showQuestions(index) {
     }
 }
 
+/**
+ * Changes all the options by displaying the next index of the text content
+ */
 function changeOptions(index) {
     for (let i = 0; i < choiceButtonRef.length; i++) {
         choiceButtonRef[i].innerHTML = `${questions[index].options[i]}`;
     }
 }
 
+/**
+ * Changes question number by displaying the next index of the text content
+ */
 function changeQuestionNumb(index) {
     questionNumb.innerHTML = `${index}`;
 }
 
 /**
- * Next button
+ * An onclick function for the Next button to iterate (by 1, shown with ++ after variable) through the questions, question number and options after each click
+ * If at the end of all questions when clicking button, the finishQuiz function runs
+ * Or the continueGame function runs again
+ * After the first checkAnswer function has run, the disabled answer options are enabled with each button click
  */
 nextBtn.onclick = function () {
     questionCount++;
     optionCount++;
     questionNumber++;
 
-    // Call on end of quiz popup when questions run out or run game again
+    // Calls on end of quiz popup when questions run out
     if (questionNumber === questions.length) {
         finishQuiz();
     } else {
-        runGame();
+        // or continues the game again
+        continueGame();
     }
-}
+
+    // Enables answers again after clicking the next button after the first checkAnswer function has ru
+    for (let i = 0; i < disableOptions; i++) {
+        choiceButtonRef[i].classList.remove('disabled');
+        choiceButtonRef[i].classList.remove('correct-answer');
+        choiceButtonRef[i].classList.remove('incorrect-answer');
+    }
+};
 
 /**
- * Check answer (Credit: Codehal)
+ * Checks if users selected answer is correct (it then adds class tag with green CSS properties)
+ * or incorrect (it then adds class tag with red CSS properties)
+ * Adds 1 point to the score if correct answer and then disables all the options
+ * (Credit: Codehal)
  */
 function checkAnswer(answer) {
     let userAnswer = answer.textContent;
     let correctAnswer = questions[questionCount].answer;
+
     if (userAnswer === correctAnswer) {
+        // Add 1 point to score 
         scoreSum++;
         score.textContent = scoreSum;
+
+        // Adds correct class tags for CSS properties
         answer.classList.add('correct-answer');
     } else {
+        // Adds incorrect class tags for CSS properties
         answer.classList.add('incorrect-answer');
     }
 
-    // Disable answers after user selected
+    // Disables answers after user selection
     for (let i = 0; i < disableOptions; i++) {
         choiceButtonRef[i].classList.add('disabled');
     }
 }
 
 /**
- * End of Quiz popup
+ * Removes the quiz area box and displays the end of quiz box by changing CSS properties
+ * Reveals the total score of completed quiz
  */
 function finishQuiz() {
     document.getElementById('quiz-area').style.display = 'none';
     document.getElementById('end-popup').style.display = 'flex';
+    // Shows total score
     const totalScore = document.getElementById('total-score');
     totalScore.textContent = scoreSum;
 }

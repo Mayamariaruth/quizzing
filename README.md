@@ -110,6 +110,7 @@ The fonts were sourced from Google Fonts.
 
 
 ### Future features
+- Disable Next button until user has selected an answer.
 - Add different quizzes focused on various subjects, such as a Science quiz, History quiz and so on.
 - Add a navigation bar to choose between the different quizzes to play.
 - Add up to 50 questions to make the quiz longer and keep users on the site.
