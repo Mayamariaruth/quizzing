@@ -178,7 +178,7 @@ nextBtn.onclick = function () {
     questionNumber++;
 
     // Calls on end of quiz popup when questions run out
-    if (questionNumber === questions.length) {
+    if (questionCount === questions.length) {
         finishQuiz();
     } else {
         // or continues the game again
