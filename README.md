@@ -107,7 +107,7 @@ The fonts were sourced from Google Fonts.
 ![Home page](docs/screenshots/homepage.png)
 
 ### Quiz
-- The quiz area consists of a box with questions, answers, a score counter and a button to exit (to the home page) or a button to move to the next question.
+- The quiz area consists of a box with questions, answers, a score counter and a button to exit (to the home page) and a button to move to the next question (which is disabled until the user selects an option).
 - The colors of the buttons and questions are generated from the background image to match and the orange color gives it a more playful vibe.
 - There is a hover effect on the answer options and buttons so the user always knows where their mouse is.
 - If the user has selected an incorrect answer, they will not see what the correct answer is which is a common feature on some quiz sites. I decided not to do so to help keep the user on the site after completing the quiz and wanting to play the quiz more times to get a higher score.
@@ -152,10 +152,7 @@ I tested all the pages in the validators to make sure they all passed.
   - There were no errors present when passing through the official Jigsaw validator ![(Jigsaw) validator](docs/screenshots/css-validator.png)
 
 ### JSHint testing
-There is one warning in JSHint about the scoreSum global variable in the checkAnswer function.
-
-* **Fix**
-    * I am aware that passing the score through my functions as a parameter would resolve it, however, to combat it at this late stage I added the required clarification with a comment saying that the variable being updated was a global one.
+There were no warnings with the JSHint testing after successfully sorting out the bugs highlighted in the [Bugs section](#bugs).
 
   ![JSHint testing](docs/screenshots/jshint.png)
 
@@ -222,29 +219,37 @@ I used the cloning method to use the VSCode desktop IDE with GitHub, below are t
 1. **Issue**
     * 'showQuestions' function kept getting an error that '.question' was not defined when pressing the Next button at the end of the quiz.
 * **Fix**
-    * Added the 'finishQuiz' function and it was then sorted.
+    * I added the 'finishQuiz' function and it was then sorted.
 
 2. **Issue**
     * 'finishQuiz' function was not registering the Display style settings so the end of quiz popup was not popping up after the quiz was over.
 * **Fix**
-    * Changed the class tag to an ID tag on the HTML elements.
+    * I changed the class tag to an ID tag on the HTML elements.
 
 3. **Issue**
     * The score was not showing up at the end of the quiz popup.
 * **Fix**
-    * Added a new ID tag to the element and a variable 'totalScore' and its textContent equaled the scoreSum in the 'finishQuiz' function.
+    * I added a new ID tag to the element and a variable 'totalScore' and its textContent equaled the scoreSum in the 'finishQuiz' function.
 
 4. **Issue**
     * When clicking the Next button, the class tags to disable the answer buttons and to add color to the correct/incorrect answers doesn't reset.
 * **Fix**
-    * Added an eventListener function for the answer options buttons and enabled the buttons in a For loop inside the Next button function.
+    * I added an eventListener function for the answer options buttons and enabled the buttons in a For loop inside the Next button function.
+
+5. **Issue**
+    * Warning in JSHint: "Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (checkAnswer)" 
+* **Fix**
+    * I changed the For loop inside the eventListener to the forEach method.
+
+6. **Issue**
+    * The forEach method in the eventListener function was sending an error back in the console that it wasn't a function so it wasn't executing.
+* **Fix**
+    * I needed to convert the answer options buttons (choiceButtonRef) to an array using the Array.from() method.
+  
 
 ### Unfixed Bugs
 
-1. **Issue**
-    * Warning in JSHint about the scoreSum global variable: "Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (checkAnswer)" 
-* **Fix**
-    * I am aware that passing the score through my functions as a parameter would resolve it, however to combat it at this late stage I added the required clarifcation with a comment saying that the variable being updated was a global one.
+No unfixed bugs.
 
 ## Credits 
 

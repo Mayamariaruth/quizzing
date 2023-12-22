@@ -8,7 +8,6 @@ const totalScore = document.getElementById('total-score');
 
 // Global DOM elements saved as variables
 const disableOptions = choiceButtonRef.length;
-optionButtons = Array.from(choiceButtonRef);
 let questionNumber = 1;
 let questionCount = 0;
 let optionCount = 0;
@@ -130,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-
 
 /**
  * When next button is clicked, the questions/options/question number functions are called and continues to the next index
