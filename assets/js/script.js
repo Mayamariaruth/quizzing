@@ -137,6 +137,8 @@ function continueGame() {
     showQuestions(questionCount);
     changeOptions(optionCount);
     changeQuestionNumb(questionNumber);
+    // Disables the Next button before user selection
+    document.getElementById('next-btn').style.pointerEvents = 'none';
 }
 
 /**
@@ -189,6 +191,7 @@ nextBtn.onclick = function () {
         choiceButtonRef[i].classList.remove('correct-answer');
         choiceButtonRef[i].classList.remove('incorrect-answer');
     }
+
 };
 
 /**
