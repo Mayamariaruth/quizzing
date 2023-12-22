@@ -4,6 +4,7 @@ const questionOpt = document.getElementById('question');
 const choiceButtonRef = document.getElementsByClassName("answer-opt");
 const nextBtn = document.getElementById('next-btn');
 const score = document.getElementById('score');
+const totalScore = document.getElementById('total-score');
 
 // Global DOM elements saved as variables
 const disableOptions = choiceButtonRef.length;
@@ -117,9 +118,10 @@ const questions = [{
 
 /**
  * Makes sure the elements in the DOM is loaded before the event listener function (click function for when user selects an answer)
+ * 
  */
 document.addEventListener('DOMContentLoaded', function() {
-    for (let i = 0; i < choiceButtonRef.length; i++) {
+    for (let i=0; i < choiceButtonRef.length; i++) {
         choiceButtonRef[i].addEventListener("click", function () {
             checkAnswer(this);
         });
@@ -198,31 +200,30 @@ function checkAnswer(answer) {
     let correctAnswer = questions[questionCount].answer;
 
     if (userAnswer === correctAnswer) {
-        // Add 1 point to score 
+        // Update global score variable and add new score to the DOM
         scoreSum++;
         score.textContent = scoreSum;
 
-        // Adds correct class tags for CSS properties
+        // Add correct answer class tags for CSS properties
         answer.classList.add('correct-answer');
     } else {
-        // Adds incorrect class tags for CSS properties
+        // Add incorrect answer class tags for CSS properties
         answer.classList.add('incorrect-answer');
     }
 
-    // Disables answers after user selection
+    // Disable answers after user selection
     for (let i = 0; i < disableOptions; i++) {
         choiceButtonRef[i].classList.add('disabled');
     }
 }
 
 /**
- * Removes the quiz area box and displays the end of quiz box by changing CSS properties
- * Reveals the total score of completed quiz
+ * Remove the quiz area box and display the end of quiz box by changing CSS properties
+ * Update the total score variable with the global score variable at end of quiz showing final score
  */
 function finishQuiz() {
     document.getElementById('quiz-area').style.display = 'none';
     document.getElementById('end-popup').style.display = 'flex';
-    // Shows total score
-    const totalScore = document.getElementById('total-score');
+    // Shows final score
     totalScore.textContent = scoreSum;
 }

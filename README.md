@@ -123,7 +123,7 @@ I manually tested this site in multiple ways highlighted below:
 * Tested every feature and its responsiveness through an extension of a live server in VScode.
 * Deployed the site in an early stage and received feedback from a professional developer (mentor), as well as students in my community.
 * Tested the site for cross-compatibility in the two most used browsers, Chrome and Safari.
-* I used DevTools to easily move between different screen sizes, simulating sizes between 320px to 2000px (but it is also functional on even larger screens given the max-width setting on the Body element to keep the content compact instead of stretched).
+* I used DevTools to easily move between different screen sizes, simulating sizes between 320px to 4000px (but it is also functional on even larger screens given the max-width setting on the Body element to keep the content compact instead of stretched).
 
 ### Validator Testing 
 I tested all the pages in the validators to make sure they all passed.
@@ -223,18 +223,16 @@ I used the cloning method to use the VSCode desktop IDE with GitHub, below are t
     * Added a new ID tag to the element and a variable 'totalScore' and it's textContent equaled the scoreSum in the 'finishQuiz' function.
 
 5. **Issue**
-    * when clicking Next button, class tags to disable answer buttons and add color to correct/incorrect answer doesn't reset.
+    * When clicking Next button, class tags to disable answer buttons and add color to correct/incorrect answer doesn't reset.
 * **Fix**
-    * 
-
-6. **Issue**
-    * 
-* **Fix**
-    * 
+    * Added an eventListener function for the answer options buttons and enabled the buttons in a For loop inside the Next button function.
 
 ### Unfixed Bugs
 
-No unfixed bugs.
+1. **Issue**
+    * Warning in JSHint about the scoreSum global variable: "Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (checkAnswer)" 
+* **Fix**
+    * I am aware that passing the score through my functions as a parameter would resolve it, however to combat it at this late stage I added the required clarifcation with a comment saying that the variable being updated was a global one.
 
 ## Credits 
 
