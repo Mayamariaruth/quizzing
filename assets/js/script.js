@@ -113,7 +113,14 @@ const questions = [{
 }
 ];
 
-let correctAnswer = questions[questionCount].answer;
+/**
+ * Run game
+ */
+function runGame() {
+    showQuestions(questionCount);
+    changeOptions(optionCount);
+    changeQuestionNumb(questionNumber);
+}
 
 /**
  * Change questions and answers when pressing Next button
@@ -135,24 +142,18 @@ function changeQuestionNumb(index) {
 }
 
 /**
- * Next button (Credit: Codehal)
+ * Next button
  */
 nextBtn.onclick = function () {
     questionCount++;
     optionCount++;
     questionNumber++;
-    showQuestions(questionCount);
-    changeOptions(optionCount);
-    changeQuestionNumb(questionNumber);
 
-    /*
-    answer.classList.remove('correct-answer');
-    answer.classList.remove('incorrect-answer')
-    choiceButtonRef[i].classList.remove('disabled');
-    */
-
+    // Call on end of quiz popup when questions run out or run game again
     if (questionNumber === questions.length) {
         finishQuiz();
+    } else {
+        runGame();
     }
 }
 
@@ -161,6 +162,7 @@ nextBtn.onclick = function () {
  */
 function checkAnswer(answer) {
     let userAnswer = answer.textContent;
+    let correctAnswer = questions[questionCount].answer;
     if (userAnswer === correctAnswer) {
         scoreSum++;
         score.textContent = scoreSum;

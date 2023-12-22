@@ -240,7 +240,7 @@ No unfixed bugs.
 ### Code 
 
 _External pages credit_
-- I drew help from [Codehal YouTube](https://www.youtube.com/watch?v=Vp8x8-reqZA&ab_channel=Codehal) for some of the code found in the 'nextBtn' function and 'checkAnswer'function.
+- I drew help from [Codehal YouTube](https://www.youtube.com/watch?v=Vp8x8-reqZA&ab_channel=Codehal) for the code found in the 'checkAnswer'function.
 
 ### Content 
 

@@ -82,7 +82,7 @@ main {
     top: 4rem;
 }
 
-h2 {
+.question-header {
     margin-top: 0;
     font-size: 2rem;
 }
