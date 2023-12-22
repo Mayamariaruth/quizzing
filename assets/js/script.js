@@ -118,7 +118,6 @@ const questions = [{
 
 /**
  * Makes sure the elements in the DOM is loaded before the event listener function (click function for when user selects an answer)
- * 
  */
 document.addEventListener('DOMContentLoaded', function() {
     for (let i=0; i < choiceButtonRef.length; i++) {

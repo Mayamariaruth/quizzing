@@ -2,11 +2,17 @@
 
 ## Introduction
 
-This site is a simple and fun quiz page 
+Quizzing is a simple and fun quiz page that aims to test your general knowledge skills with questions ranging from geography to entertainment and everything in between.
+
+It's for those moments where you want to challenge your friends and see who really listened during class or for the crazy game nights at home with your family to actually test if your dad is as smart as he says he is.
+
+There are many quiz sites out there but you can never have enough in my opinion! Especially when they are as visually pleasing and challenging as this one.
 
 Link to the live site here - [Quizzing](https://mayamariaruth.github.io/quizzing/quiz.html)
 
-![Responsive Mockup](docs/screenshots/)
+![Responsive Mockup](docs/screenshots/home-resp.png)
+
+![Responsive Mockup](docs/screenshots/quiz-resp.png)
 
 ## Table of Contents:
 1. [**Introduction**](#introduction)
@@ -27,9 +33,7 @@ Link to the live site here - [Quizzing](https://mayamariaruth.github.io/quizzing
     * [***Validator testing***](#validator-testing)
     * [***JSHint testing***](#jshint-testing)
     * [***Lighthouse testing***](#lighthouse-testing)
-       * [*Home page*](#home-page)
-       * [*Quiz*](#quiz)
-       * [*End of quiz*](#end-of-quiz)
+       * [*Home page & Quiz area*](#home-page--quiz-area)
     * [***Wave accessibility evaluation***](#wave-accessibility-evaluation)
 1. [**Deployment**](#deployment)
     * [***Cloning***](#cloning)
@@ -45,8 +49,10 @@ Link to the live site here - [Quizzing](https://mayamariaruth.github.io/quizzing
 ## Design
 
 ### Target audience 
-* Women who need a change in their lives.
-* 
+* People of all ages, quizzes are for everyone!
+* People who enjoy quizzes and answering questions of different topics.
+* People who like an intellectual challenge.
+* People who like to play games and testing ones knowledge, as well as learning.
 
 ### User stories
 * I want to see and understand what the subject of the site is immediately.
@@ -55,7 +61,10 @@ Link to the live site here - [Quizzing](https://mayamariaruth.github.io/quizzing
 * I want to feel happy from the look and feel of the site, ready to embark on the quiz challenge.
 
 ### Site aims 
-* To 
+* To spread some happiness with the design of the site and challenging questions.
+* To bring people together and start quizzing!
+* To teach some general knowledge.
+* To activate user's brain and get them excited about general knowledge.
 
 ### Color scheme
 I adapted the colors on the site to my main image so it would look more cohesive.
@@ -80,14 +89,13 @@ The fonts were sourced from Google Fonts.
 ## Features 
 
 ### Header
-
   - 
 
   ![Header](docs/screenshots/header.png)
 
 ### Home page
 
-- 
+- It has a simple design with a beautiful background in yellow/orange whichand a playful logo to immediately invoke a happy 
 
 ![Home page](docs/screenshots/homepage.png)
 
@@ -134,48 +142,42 @@ I tested all the pages in the validators to make sure they all passed.
   - There were no errors present when passing through the official Jigsaw validator ![(Jigsaw) validator](docs/screenshots/css-validator.png)
 
   ### JSHint testing
+There is one warning in JSHint about the scoreSum global variable in the checkAnswer function.
 
+* **Fix**
+    * I am aware that passing the score through my functions as a parameter would resolve it, however to combat it at this late stage I added the required clarifcation with a comment saying that the variable being updated was a global one.
 
-  ![JavaScript code](docs/screenshots/)
+  ![JSHint testing](docs/screenshots/jshint.png)
 
 ### Lighthouse testing 
 
 This testing was done in an incognito window in Chrome to make sure the results were not influenced by browser extensions.
 
-#### Home page
+The testing was the same score for the home page and quiz page so below are the scores for both pages.
+
+I 
+
+#### Home page & Quiz area
 __Mobile version:__
 
-![Mobile home page](docs/screenshots/)
+![Mobile home page](docs/screenshots/lighthouse-mobile.png)
 
 __Desktop version:__
 
-![Desktop home page](docs/screenshots/)
+![Desktop home page](docs/screenshots/lighthouse-desktop.png)
 
-#### Quiz
-__Mobile version:__
-
-![Mobile services page](docs/screenshots/)
-
-__Desktop version:__
-
-![Desktop services page](docs/screenshots/)
-
-#### End of quiz
-__Mobile version:__
-
-![Mobile contact page](docs/screenshots/)
-
-__Desktop version:__
-
-![Desktop contact page](docs/screenshots/)
 
 ### Wave accessibility evaluation
 
 I also used the Wave evaluation tool to make sure I covered all my bases. 
 
-The evaluation is free from errors and below is taken from the Home page but the results match on all pages.
+The evaluation is free from errors and below is taken from the Home page and quiz page.
 
-![Wave evaluation](docs/screenshots/)
+#### Wave home page
+![Wave evaluation](docs/screenshots/wave-home.png)
+
+#### Wave quiz page
+![Wave evaluation](docs/screenshots/wave-quiz.png)
 
 ## Deployment
 
