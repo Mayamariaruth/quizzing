@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This site was created 
+This site is a simple and fun quiz page 
 
-Link to the live site here - [Quizzing]()
+Link to the live site here - [Quizzing](https://mayamariaruth.github.io/quizzing/quiz.html)
 
 ![Responsive Mockup](docs/screenshots/)
 
@@ -20,15 +20,16 @@ Link to the live site here - [Quizzing]()
     * [***Header***](#header)
     * [***Home page***](#home-page)
     * [***Quiz***](#quiz)
-    * [***End of quiz***](#end-of-quiz)
+    * [***End of quiz popup***](#end-of-quiz-popup)
     * [***Footer***](#the-footer)
 1. [**Testing**](#testing)
     * [***Manual testing***](#manual-testing)
     * [***Validator testing***](#validator-testing)
+    * [***JSHint testing***](#jshint-testing)
     * [***Lighthouse testing***](#lighthouse-testing)
        * [*Home page*](#home-page)
-       * [*Quiz*]()
-       * [*End of quiz*]()
+       * [*Quiz*](#quiz)
+       * [*End of quiz*](#end-of-quiz)
     * [***Wave accessibility evaluation***](#wave-accessibility-evaluation)
 1. [**Deployment**](#deployment)
     * [***Cloning***](#cloning)
@@ -50,18 +51,21 @@ Link to the live site here - [Quizzing]()
 ### User stories
 * I want to see and understand what the subject of the site is immediately.
 * I want to easily navigate the site if needed.
-* 
+* I want to be tested on my general knowdledge skills.
+* I want to feel happy from the look and feel of the site, ready to embark on the quiz challenge.
 
 ### Site aims 
 * To 
 
 ### Color scheme
-
-
+I adapted the colors on the site to my main image so it would look more cohesive.
+I generated the colors from the image on [Coolors](https://coolors.co/) so the background image would match the image and the questions color/quiz buttons color would match the pattern on the image.
 
 I utilized the Contrast grid by Eightshapes to test my color combos so the colors complied with the highest accessibility.
 
-![Color](docs/screenshots/)
+I did not add the green and red text to the answer options after user selected (I just added a thick green/red border) since they did not pass on the '#EF7A16' background as seen below.
+
+![Color](docs/screenshots/contrastgrid.png)
 
 ### Typography
 I used two different fonts across the page:
@@ -79,37 +83,37 @@ The fonts were sourced from Google Fonts.
 
   - 
 
-  ![Header](docs/screenshots/)
+  ![Header](docs/screenshots/header.png)
 
 ### Home page
 
 - 
 
-![Home page](docs/screenshots/)
+![Home page](docs/screenshots/homepage.png)
 
 ### Quiz
-
 - 
+- If the user has selected an incorrect answer, they will not see what the correct answer is which is a common feature on some quiz sites. I decided not to do so since that would help in keeping the user on the site after completing the quiz and wanting to play the quiz more times to get a higher score.
 
-![Quiz](docs/screenshots/)
+![Quiz](docs/screenshots/quiz.png)
 
-### End of quiz
+### End of quiz popup
+- This is a very
 
-- 
-
-![End of quiz](docs/screenshots/)
+![End of quiz](docs/screenshots/endpopup.png)
 
 ### Footer
 
 - 
 
-![Footer](docs/screenshots/)
+![Footer](docs/screenshots/footer.png)
 
 
 ### Future features
-
-- 
-
+- Add different quizzes focused on various subjects, such as a Science quiz, History quiz and so on.
+- Add a navigation bar to choose between the different quizzes to play.
+- Add up to 50 questions to make the quiz longer and keep users on the site.
+- Add a feature to allow users to send the quiz to their friends and create 'rooms' to keep track of everyone's score (It's always more fun to play with friends!).
 
 ## Testing 
 
@@ -123,10 +127,15 @@ I manually tested this site in multiple ways highlighted below:
 ### Validator Testing 
 I tested all the pages in the validators to make sure they all passed.
 - HTML
-  - There were no errors present when passing through the official W3C validator ![W3C validator](docs/screenshots/html-validator.png)
+  - There were no errors present when passing through the official W3C validator ![W3C validator](docs/screenshots/)
 
 - CSS
-  - There were no errors present when passing through the official Jigsaw validator ![(Jigsaw) validator](docs/screenshots/css-validator.jpg)
+  - There were no errors present when passing through the official Jigsaw validator ![(Jigsaw) validator](docs/screenshots/)
+
+  ### JSHint testing
+
+
+  ![JavaScript code](docs/screenshots/)
 
 ### Lighthouse testing 
 
@@ -177,11 +186,17 @@ To deploy the site to GitHub pages, I went through below steps:
 - Press Save and go back to the Code page of your repository.
 - After a couple of minutes, refresh the page and the successfully deployed site will be found on the right-hand side of the page under 'Deployments' with the name "GitHub pages".
 
-Live link to the site - [Quizzing]()
+Live link to the site - [Quizzing](https://mayamariaruth.github.io/quizzing/quiz.html)
 
 ### Cloning
 
-
+I used the cloning method to use the VSCode desktop IDE with GitHub, below are the steps I took:
+- Generate a repository and click the Code button in the middle of the screen.
+- Go to Local and under Clone, copy the Git repository URL on the HTTPS tab.
+- Go to the VSCode IDE front page and click 'Clone Git Repository' under Start or go to the Source Control button on the left hand side menu bar and click 'Clone Repository'.
+- Input the URL in the URL tab at the top of the window and press Enter.
+- Select the location/folder where you want to store your repository on your computer through the popup and click the 'Select Repository location' button.
+- VSCode will now clone the repository and you can choose to open it in your currect window or in a new window.
 
 ## Bugs
 
@@ -230,16 +245,17 @@ _External pages credit_
 ### Content 
 
 - The questions and answers were generated with ChatGPT.
-- The social media links direct to the homepages of each site.
+- The social media links directly to the homepages of each site.
+- Fonts were acquired from [Google Fonts](https://fonts.google.com/).
 - The icons in the footer were taken from [Font Awesome](https://fontawesome.com/).
 
 ### Media
 
 - The background image was generated with Microsoft Designer's AI tool.
-- Fonts were acquired from [Google Fonts](https://fonts.google.com/).
+- The color palette was generated with the image on[Coolors](https://coolors.co/).
 - [Am I Responsive](https://ui.dev/amiresponsive) was used to generate the initial image of the ReadME to showcase how the site looks on different screens.
 
 ### General reference
 
-- I relied upon my code learnings from the Code Institute, as well as the walk-through of the Love maths project and [Codehal's YouTube video](https://www.youtube.com/watch?v=Vp8x8-reqZA&ab_channel=Codehal). There are similarities in the code but I credited the necessary sections.
+- I relied upon my code learnings from the Code Institute, as well as the walk-through of the Love maths project and [Codehal's YouTube video](https://www.youtube.com/watch?v=Vp8x8-reqZA&ab_channel=Codehal). There are similarities in some of the code but I credited the necessary sections.
 - W3Schools and StackOverflow were the sites mostly used for external references.
