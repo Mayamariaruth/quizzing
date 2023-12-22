@@ -245,7 +245,11 @@ I used the cloning method to use the VSCode desktop IDE with GitHub, below are t
     * The forEach method in the eventListener function was sending an error back in the console that it wasn't a function so it wasn't executing.
 * **Fix**
     * I needed to convert the answer options buttons (choiceButtonRef) to an array using the Array.from() method.
-  
+
+7. **Issue**
+    * The 10th question was not displaying before the end of quiz popup shows up.
+* **Fix**
+    * I changed the '(questionNumber === questions.length)' If statement in the nextBtn.onclick function to (questionCount === questions.length) instead.
 
 ### Unfixed Bugs
 
