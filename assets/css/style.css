@@ -171,6 +171,10 @@ main {
     border: none;
 }
 
+#next-btn {
+    pointer-events: none;
+}
+
 /* End of quiz popup */
 #end-popup {
     flex-direction: column;

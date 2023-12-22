@@ -8,6 +8,7 @@ const totalScore = document.getElementById('total-score');
 
 // Global DOM elements saved as variables
 const disableOptions = choiceButtonRef.length;
+optionButtons = Array.from(choiceButtonRef);
 let questionNumber = 1;
 let questionCount = 0;
 let optionCount = 0;
@@ -118,14 +119,18 @@ const questions = [{
 
 /**
  * Makes sure the elements in the DOM is loaded before the event listener function (click function for when user selects an answer)
- */
-document.addEventListener('DOMContentLoaded', function() {
-    for (let i=0; i < choiceButtonRef.length; i++) {
-        choiceButtonRef[i].addEventListener("click", function () {
+ * Converted the ChoiceButtonRef to an array to make sure the forEach function works
+*/
+document.addEventListener('DOMContentLoaded', function () {
+    // Converting the choiceButtonRef variable to an array
+    const optionButtons = Array.from(choiceButtonRef);
+    optionButtons.forEach(button => {
+        button.addEventListener("click", function () {
             checkAnswer(this);
         });
-    }
+    });
 });
+
 
 /**
  * When next button is clicked, the questions/options/question number functions are called and continues to the next index
@@ -214,6 +219,9 @@ function checkAnswer(answer) {
     for (let i = 0; i < disableOptions; i++) {
         choiceButtonRef[i].classList.add('disabled');
     }
+
+    // Activates the Next button after user selection
+    document.getElementById('next-btn').style.pointerEvents = 'visible';
 }
 
 /**
