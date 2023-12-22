@@ -26,7 +26,7 @@ header>a {
     margin-left: 1rem;
 }
 
-/* Main content */
+/* Home page */
 main {
     min-height: 100vh;
     flex: 1 0 auto;
@@ -143,7 +143,7 @@ main {
     font-size: 1.3rem;
 }
 
-#exit-btn {
+.exit-btn {
     margin-right: 1rem;
     padding: 7px 20px 7px 20px;
     margin-left: 1rem;
@@ -154,7 +154,7 @@ main {
     color: black;
 }
 
-#exit-btn:hover,
+.exit-btn:hover,
 #next-btn:hover,
 #again-btn:hover {
     border: solid 2px black;

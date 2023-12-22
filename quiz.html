@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +22,6 @@
     <!-- Title -->
     <title>Quizzing</title>
 </head>
-
 <body>
     <!-- Logo -->
     <header>
@@ -37,17 +35,10 @@
         <section class="center">
             <div id="quiz-area" style="display: flex;">
                 <h2 class="question-header">Question <span id="question-number">1</span></h2>
-
-
-                <!-- <span id="timer">15</span> -->
-
-
                 <div class="questions">
                     <span id="question">Who is known as the "King of Pop"?</span>
                 </div>
-
                 <p id="choose-text">Please choose one answer below</p>
-
                 <div id="answers">
                     <button class="answer-opt" onclick="checkAnswer(this)">Chris Brown</button>
                     <button class="answer-opt" onclick="checkAnswer(this)">Elvis Presley</button>
@@ -55,9 +46,8 @@
                     <button class="answer-opt" onclick="checkAnswer(this)">Michael Jackson</button>
                 </div>
                 <div class="scores">Your score: <span id="score">0</span> / 10</div>
-
                 <div class="quiz-btns">
-                    <a href="index.html" id="exit-btn">
+                    <a href="index.html" class="exit-btn">
                         <span>Exit</span>
                     </a>
                     <button id="next-btn">Next</button>
@@ -70,7 +60,7 @@
                 <h3>Well done!</h3>
                 <div class="scores" id="final-score">Your score: <span id="total-score">0</span> / 10</div>
                 <div class="quiz-btns" id="end-btns">
-                    <a href="index.html" id="exit-btn">
+                    <a href="index.html" class="exit-btn">
                         <span>Exit</span>
                     </a>
                     <a id="again-btn" href="quiz.html">
@@ -102,5 +92,4 @@
     <!-- JavaScript file -->
     <script src="assets/js/script.js" defer></script>
 </body>
-
 </html>

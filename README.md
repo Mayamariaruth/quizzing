@@ -127,10 +127,10 @@ I manually tested this site in multiple ways highlighted below:
 ### Validator Testing 
 I tested all the pages in the validators to make sure they all passed.
 - HTML
-  - There were no errors present when passing through the official W3C validator ![W3C validator](docs/screenshots/)
+  - There were no errors present when passing through the official W3C validator ![W3C validator](docs/screenshots/html-validator.png)
 
 - CSS
-  - There were no errors present when passing through the official Jigsaw validator ![(Jigsaw) validator](docs/screenshots/)
+  - There were no errors present when passing through the official Jigsaw validator ![(Jigsaw) validator](docs/screenshots/css-validator.png)
 
   ### JSHint testing
 
