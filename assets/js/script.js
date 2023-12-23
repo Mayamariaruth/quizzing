@@ -113,8 +113,7 @@ const questions = [{
         "Sir Isaac Newton",
         "Charles Darwin"
     ]
-}
-];
+}];
 
 /**
  * Makes sure the elements in the DOM is loaded before the event listener function (click function for when user selects an answer)
@@ -132,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /**
  * When next button is clicked, the questions/options/question number functions are called and continues to the next index
- */
+*/
 function continueGame() {
     showQuestions(questionCount);
     changeOptions(optionCount);
@@ -143,7 +142,7 @@ function continueGame() {
 
 /**
  * Changes question by displaying the next index of the text content
- */
+*/
 function showQuestions(index) {
     for (let i = 0; i < questions.length; i++) {
         questionOpt.innerHTML = `${questions[index].question}`;
@@ -152,7 +151,7 @@ function showQuestions(index) {
 
 /**
  * Changes all the options by displaying the next index of the text content
- */
+*/
 function changeOptions(index) {
     for (let i = 0; i < choiceButtonRef.length; i++) {
         choiceButtonRef[i].innerHTML = `${questions[index].options[i]}`;
@@ -161,7 +160,7 @@ function changeOptions(index) {
 
 /**
  * Changes question number by displaying the next index of the text content
- */
+*/
 function changeQuestionNumb(index) {
     questionNumb.innerHTML = `${index}`;
 }
@@ -171,7 +170,7 @@ function changeQuestionNumb(index) {
  * If at the end of all questions when clicking button, the finishQuiz function runs
  * Or the continueGame function runs again
  * After the first checkAnswer function has run, the disabled answer options are enabled with each button click
- */
+*/
 nextBtn.onclick = function () {
     questionCount++;
     optionCount++;
@@ -191,7 +190,6 @@ nextBtn.onclick = function () {
         choiceButtonRef[i].classList.remove('correct-answer');
         choiceButtonRef[i].classList.remove('incorrect-answer');
     }
-
 };
 
 /**
@@ -199,7 +197,7 @@ nextBtn.onclick = function () {
  * or incorrect (it then adds class tag with red CSS properties)
  * Adds 1 point to the score if correct answer and then disables all the options
  * (Credit: Codehal)
- */
+*/
 function checkAnswer(answer) {
     let userAnswer = answer.textContent;
     let correctAnswer = questions[questionCount].answer;
@@ -228,7 +226,7 @@ function checkAnswer(answer) {
 /**
  * Remove the quiz area box and display the end of quiz box by changing CSS properties
  * Update the total score variable with the global score variable at end of quiz showing final score
- */
+*/
 function finishQuiz() {
     document.getElementById('quiz-area').style.display = 'none';
     document.getElementById('end-popup').style.display = 'flex';

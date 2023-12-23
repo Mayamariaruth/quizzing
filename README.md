@@ -153,8 +153,6 @@ I tested all the pages in the validators to make sure they all passed.
 ### JSHint testing
 There were no warnings with the JSHint testing after successfully sorting out the bugs highlighted in the [Bugs section](#bugs).
 
-  ![JSHint testing](docs/screenshots/jshint.png)
-
 ### Lighthouse testing 
 
 This testing was done in an incognito window in Chrome to make sure the results were not influenced by browser extensions.
